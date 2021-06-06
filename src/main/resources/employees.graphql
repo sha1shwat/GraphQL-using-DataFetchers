@@ -1,0 +1,24 @@
+schema {
+  query: Query
+}
+
+type Query{
+  allEmployees : [Employee]
+  employee(employeeId : String) : Employee
+  allManagers : [Manager]
+}
+
+type Employee{
+
+  employeeId : String!
+  name : String @deprecated
+  designation : String
+
+}
+
+type Manager{
+
+  subordinateIds : [String]
+  employeeId : String
+  name : String
+}
